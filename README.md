@@ -177,5 +177,5 @@ https://github.com/jmiseikis/ur5_inf3480
 You can check out the source code:
 git clone https://github.com/jmiseikis/ur5_inf3480.git
 
-If you make any modifications and updates, please feel free to fork the repository and commit them! Especially as suggestions for additions for next year students, it’s highly appreciated!
+If you make any modifications and updates, please feel free to fork the repository and send pull request! Especially as suggestions for additions for next year students, it’s highly appreciated!
 

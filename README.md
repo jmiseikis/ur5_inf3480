@@ -3,6 +3,8 @@
 ## Intro
 In this tutorial we work with a bit older version - ROS Indigo and Ubuntu Trusty 14.04. We will be installing MoveIt! And ROS Industrial frameworks and writing a simple script to move the simulated robot. The script will run in our created ROS package and can be easily adaptable to be used with real robot.
 
+If you don't have Ubuntu and ROS on your computer, you can use this virtual machine: http://nootrix.com/software/ros-indigo-virtual-machine/
+
 Having done this tutorial, you will easily complete an optional ROS assignment where you get to execute your written trajectories on the real UR5 robot.
 
 ##Install ROS

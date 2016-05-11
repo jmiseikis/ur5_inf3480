@@ -1,4 +1,4 @@
-# University of Oslo, INF3480/4380 ROS Practical Lecture
+# University of Oslo, INF3480/4380 ROS Lecture
 
 ## Intro
 In this tutorial we work with a bit older version - ROS Indigo and Ubuntu Trusty 14.04. We will be installing MoveIt! And ROS Industrial frameworks and writing a simple script to move the simulated robot. The script will run in our created ROS package and can be easily adaptable to be used with real robot.

@@ -244,7 +244,7 @@ Check the second answer (with 6 votes) how to do it using terminal http://askubu
 
 ## How to install Ubuntu alongside OS X
 
-Follow these instructions to install rEFInd boot loader and Ubuntu. *BUT BE AWARE* I suggest to use the "Something else" option in the Ubuntu installation step instead of "Install Ubuntu alongside OS X". I had that screwing up my OS X installation, *so use at your own risk!*
+Follow these instructions to install rEFInd boot loader and Ubuntu. **BUT BE AWARE** I suggest to use the "Something else" option in the Ubuntu installation step instead of "Install Ubuntu alongside OS X". I had that screwing up my OS X installation, **so use at your own risk!** I definitely recommend to have a back up before trying!
 
 http://www.howtogeek.com/187410/how-to-install-and-dual-boot-linux-on-a-mac/
 

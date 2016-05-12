@@ -40,7 +40,7 @@ public:
 	
 	// Collision object
 	moveit_msgs::CollisionObject collision_object;
-	std::vector<moveit_msgs::CollisionObject> collision_objects;
+	std::vector<moveit_msgs::CollisionObject> ß;
 
 	MoveRobot()
 	{
@@ -48,16 +48,11 @@ public:
 		sleep(10.0);
 
 		moveit::planning_interface::MoveGroup group("manipulator");
-		// We will use the :planning_scene_interface:`PlanningSceneInterface`
-  		// class to deal directly with the world.
-		//moveit::planning_interface::PlanningSceneInterface planning_scene_interface; 
 
 		// Pre-programmed robot move
 		//moveRobotToHome();
 		//moveRobotToHomeWithFloor();
 		//moveRobotCartesianPath();
-		
-		//testGroupPass(group, planning_scene_interface);
 
 		// ############ LEAP MOTION ############
 		// collision_object.header.frame_id = "base_link";//group.getPlanningFrame();
@@ -94,57 +89,6 @@ public:
 
 	~MoveRobot()
 	{
-	}
-
-	void testGroupPass(moveit::planning_interface::MoveGroup group, moveit::planning_interface::PlanningSceneInterface planning_scene_interface)
-	{
-
-		// (Optional) Create a publisher for visualizing plans in Rviz.
-		ros::Publisher display_publisher = nh_.advertise<moveit_msgs::DisplayTrajectory>("/move_group/display_planned_path", 1, true);
-		moveit_msgs::DisplayTrajectory display_trajectory;
-
-		// Set the start state to current state
-		group.setStartState(*group.getCurrentState());
-
-		// Re-define starting position
-		std::vector<geometry_msgs::Pose> waypoints;
-		geometry_msgs::Pose target_pose1;
-		target_pose1 = group.getCurrentPose().pose;
-		waypoints.push_back(target_pose1);
-
-		// Position 1
-		target_pose1.position.x -= 0.2;
-		waypoints.push_back(target_pose1);
-
-		// Position 2
-		target_pose1.position.z += 0.2;
-		waypoints.push_back(target_pose1);
-
-		// Position 3
-		target_pose1.position.x -= 0.2;
-		waypoints.push_back(target_pose1);
-
-		// We want the cartesian path to be interpolated at a resolution of 1 cm
-		// which is why we will specify 0.01 as the max step in cartesian
-		// translation.  We will specify the jump threshold as 0.0, effectively
-		// disabling it.
-		moveit_msgs::RobotTrajectory trajectory;
-		double fraction = group.computeCartesianPath(waypoints,
-		                                           0.01,  // eef_step
-		                                           0.0,   // jump_threshold
-		                                           trajectory);
-
-		// Get robot trajectory to which joint speeds will be added
-		robot_trajectory::RobotTrajectory robot_move_trajectory(group.getCurrentState()->getRobotModel(), "manipulator");
-		// Second get a RobotTrajectory from trajectory
-		robot_move_trajectory.setRobotTrajectoryMsg(*group.getCurrentState(), trajectory);
-
-		ROS_INFO("Visualizing Cartesian path (%.2f%% achieved)",
-		    fraction * 100.0);    
-		// Sleep to give Rviz time to visualize the plan
-		//sleep(5.0);
-
-		//bool success = group.asyncMove();
 	}
 
 	void moveRobotToHome()

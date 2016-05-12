@@ -60,6 +60,6 @@
     <!-- <include file="$(find ur5_moveit_config)/launch/default_warehouse_db.launch" /> -->
 
     <!-- Launch our own script -->
-    <!-- <node name="inf3480_move_robot" pkg="ur5_inf3480" type="inf3480_move_robot" respawn="false" output="screen"></node> -->
+    <node name="inf3480_move_robot" pkg="ur5_inf3480" type="inf3480_move_robot" respawn="false" output="screen"></node>
 </launch>
 

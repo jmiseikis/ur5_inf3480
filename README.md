@@ -56,11 +56,13 @@ catkin_make
 http://wiki.ros.org/ROS/Tutorials/CreatingPackage
 
 Create a package for INF3480 with required dependencies
-
-`catkin_create_pkg ur5_inf3480 moveit_ros_move_group moveit_planners_ompl moveit_ros_visualization joint_state_publisher robot_state_publisher xacro ur_description moveit_msgs moveit_core moveit_ros_planning_interface`
-
+```
+cd ~/catkin_ws/src
+catkin_create_pkg ur5_inf3480 moveit_ros_move_group moveit_planners_ompl moveit_ros_visualization joint_state_publisher robot_state_publisher xacro ur_description moveit_msgs moveit_core moveit_ros_planning_interface
+```
 Create the launch directory
 ```
+cd ~/catkin_ws/src/ur5_inf3480
 mkdir launch
 cd launch
 ```

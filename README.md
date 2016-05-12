@@ -181,18 +181,49 @@ git clone https://github.com/jmiseikis/ur5_inf3480.git
 
 If you make any modifications and updates, please feel free to fork the repository and send pull request! Especially as suggestions for additions for next year students, it’s highly appreciated!
 
-## Leap Motion
+## (Optional Extra) Leap Motion
 
-We can integrate Leap Motion controller into the script.
+If you have Leap Motion sensor, we can integrate Leap Motion controller into the script.
 
-You will need to download Leap Motion SDK https://developer.leapmotion.com/v2
+You will need to download and install Leap Motion SDK. Please follow the instructions for installation and test if it's functioning correctly https://developer.leapmotion.com/v2
 
 And install the leap motion ROS package
 
 `sudo apt-get install ros-indigo-leap-motion`
 
+And follow instructions to setup the rest of the enviroment http://wiki.ros.org/leap_motion
+
 Please note that sometimes you need to restart leapd daemon service, because WebSockets for transmitting data get 'stuck'
 
 `sudo service leapd restart`
 
-In our script, Leap Motion controls the location of the obstacle. But it can be easily integrate to guide the end effector position of the robot. Can you make it happen?
+To test the Leap Motion with ROS, you can run the following scripts. Always have the Leap Motion controller connected via USB.
+
+In one terminal window start ROS Core
+
+`roscore`
+
+While in another terminal window run the Leap Motion sender script
+
+`rosrun leap_motion sender.py`
+
+Now you should see the live text stream with data coming from Leap Motion sensor.
+
+In our script, Leap Motion controls the location of the obstacle. To run it, uncomment the whole section between the following two lines to control the obstacle position in RViz.
+
+Uncomment all the lines from 
+
+`// ############ LEAP MOTION ############`
+
+To
+
+`// ############ END ############`
+
+While leaving all the pre-programmed robot move scripts commented out, like this:
+```
+// Pre-programmed robot move
+//moveRobotToHome();
+//moveRobotToHomeWithFloor();
+//moveRobotCartesianPath();
+```
+But it can be easily integrate to guide the end effector position of the robot. Can you make it happen?

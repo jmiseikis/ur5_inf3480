@@ -227,3 +227,32 @@ While leaving all the pre-programmed robot move scripts commented out, like this
 //moveRobotCartesianPath();
 ```
 But it can be easily integrate to guide the end effector position of the robot. Can you make it happen?
+
+# What if I'm using ROS Jade or other ROS version?
+
+There were few issues with ROS Jade not having debian packages (cannot use apt-get to install them) for MoveIt!
+
+In this case, you have to compile MoveIt! from source by following this guide, use ROS Jade Steps 2&3: http://moveit.ros.org/install/ 
+
+# How to run Ubuntu on Mac
+
+I have received many questions during the lecture about how to dual boot macs to run Ubuntu. So here are some links to the instructions for you to follow.
+
+## Create bootable Ubuntu USB
+
+Check the second answer (with 6 votes) how to do it using terminal http://askubuntu.com/questions/28495/how-do-i-get-my-mac-to-boot-from-an-ubuntu-usb-key
+
+## How to install Ubuntu alongside OS X
+
+Follow these instructions to install rEFInd boot loader and Ubuntu. *BUT BE AWARE* I suggest to use the "Something else" option in the Ubuntu installation step instead of "Install Ubuntu alongside OS X". I had that screwing up my OS X installation, *so use at your own risk!*
+
+http://www.howtogeek.com/187410/how-to-install-and-dual-boot-linux-on-a-mac/
+
+For "Something else" you can follow part of this guide (steps from "Resize Partitions" to "Installer") http://www.makeuseof.com/tag/install-linux-macbook-pro/
+
+Also, sometimes wireless drivers do not work for Macs, so you need to install two debian packages (simply double-click them in Ubuntu) to make WiFi card work. They are located as a part of this repository: https://github.com/jmiseikis/ur5_inf3480/tree/master/UbuntuWiFiFix
+
+# Contact
+
+For any other issues or if you want to use this package, please contact me. You can find my contact details on UiO profile:
+http://www.mn.uio.no/ifi/english/people/aca/justinm/

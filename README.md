@@ -179,3 +179,18 @@ git clone https://github.com/jmiseikis/ur5_inf3480.git
 
 If you make any modifications and updates, please feel free to fork the repository and send pull request! Especially as suggestions for additions for next year students, it’s highly appreciated!
 
+## Leap Motion
+
+We can integrate Leap Motion controller into the script.
+
+You will need to download Leap Motion SDK https://developer.leapmotion.com/v2
+
+And install the leap motion ROS package
+
+`sudo apt-get install ros-indigo-leap-motion`
+
+Please note that sometimes you need to restart leapd daemon service, because WebSockets for transmitting data get 'stuck'
+
+`sudo service leapd restart`
+
+In our script, Leap Motion controls the location of the obstacle. But it can be easily integrate to guide the end effector position of the robot. Can you make it happen?

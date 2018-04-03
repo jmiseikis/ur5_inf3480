@@ -40,7 +40,7 @@ public:
 	
 	// Collision object
 	moveit_msgs::CollisionObject collision_object;
-	std::vector<moveit_msgs::CollisionObject> ß;
+	std::vector<moveit_msgs::CollisionObject> collision_objects_list;
 
 	MoveRobot()
 	{
@@ -80,7 +80,7 @@ public:
 		// collision_object.primitive_poses.push_back(box_pose);
 		// collision_object.operation = collision_object.ADD;
 
-		// collision_objects.push_back(collision_object);  
+		// collision_objects_list.push_back(collision_object);  
 
 		// leap_target_pose_sub_ = nh_.subscribe("/leapmotion/data", 1, &MoveRobot::AddLeapMotionObstacle, this);
 

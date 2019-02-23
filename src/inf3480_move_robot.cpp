@@ -50,9 +50,9 @@ public:
 		moveit::planning_interface::MoveGroup group("manipulator");
 
 		// Pre-programmed robot move
-		//moveRobotToHome();
-		//moveRobotToHomeWithFloor();
-		//moveRobotCartesianPath();
+		moveRobotToHome();
+		moveRobotToHomeWithFloor();
+		moveRobotCartesianPath();
 
 		// ############ LEAP MOTION ############
 		// collision_object.header.frame_id = "base_link";//group.getPlanningFrame();
@@ -125,7 +125,7 @@ public:
 		// and visualize it.
 		// Note that we are just planning, not asking move_group 
 		// to actually move the robot.
-		bool success = group.asyncMove();
+		moveit::planning_interface::MoveItErrorCode success = group.asyncMove();
 		
 
 		ROS_INFO("Visualizing plan 1 (pose goal) %s",success?"":"FAILED");    
@@ -172,7 +172,7 @@ public:
 		// to actually move the robot.
 		moveit::planning_interface::MoveGroup::Plan my_plan;
 		//bool success = group.plan(my_plan);
-		bool success = group.asyncMove();
+		moveit::planning_interface::MoveItErrorCode success = group.asyncMove();
 
 		//bool success = group.move();
 
@@ -296,7 +296,7 @@ public:
 		// Sleep to give Rviz time to visualize the plan
 		sleep(5.0);
 
-		bool success = group.asyncMove();
+		moveit::planning_interface::MoveItErrorCode success = group.asyncMove();
 	}
 
 	void AddLeapMotionObstacle(const leap_motion::leapros& leap_msg)
@@ -308,14 +308,14 @@ public:
 		//ROS_INFO("Leap motion position %f %f %f", target_point.x, target_point.y, target_point.z);
 
 		// Remap the leap motion data
-		collision_objects[0].primitive_poses[0].position.x = (target_point.x) / 500;
-		collision_objects[0].primitive_poses[0].position.y = (target_point.z * (-1)) / 500;
-		collision_objects[0].primitive_poses[0].position.z = (target_point.y) / 500;
+		//collision_objects[0].primitive_poses[0].position.x = (target_point.x) / 500;
+		//collision_objects[0].primitive_poses[0].position.y = (target_point.z * (-1)) / 500;
+		//collision_objects[0].primitive_poses[0].position.z = (target_point.y) / 500;
 		//collision_objects.push_back(collision_object);  
 
 		// Now, let's add the collision object into the world
 		//ROS_INFO("Add an object into the world");  
-		planning_scene_interface.addCollisionObjects(collision_objects);
+		//planning_scene_interface.addCollisionObjects(collision_objects);
 		//sleep(0.1);
 	}
 
